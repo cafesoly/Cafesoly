@@ -1,16 +1,347 @@
-## Hi there 👋
 
-<!--
-**cafesoly/Cafesoly** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#85837c">
+<title>Cafe Soley | Menu</title>
+<style>
+:root{
+ --concrete:#85837c;
+ --concrete-dark:#66635d;
+ --coffee:#b18a65;
+ --coffee-dark:#806044;
+ --cream:#eee4d4;
+ --card:#d8cbbb;
+ --ink:#40372f;
+ --muted:#766b60;
+}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Tahoma,Arial,sans-serif;
+ color:var(--cream);
+ background:
+ radial-gradient(ellipse at 20% 10%,#aaa69d 0%,transparent 45%),
+ linear-gradient(145deg,#77756e,#89867f 55%,#716e68);
+ min-height:100vh;
+}
+header{
+ margin:24px 18px 30px;
+ padding:55px 15px;
+ text-align:center;
+ border:1px solid #c4a17e;
+ border-radius:27px;
+ background:linear-gradient(145deg,#625c53,#393630);
+ box-shadow:0 10px 30px #37332d55;
+}
+.logo{
+ font-family:Georgia,serif;
+ font-size:clamp(42px,12vw,65px);
+ line-height:1.2;
+ letter-spacing:6px;
+ color:#d4b18a;
+}
+.line{
+ width:95px;height:3px;
+ background:var(--coffee);
+ margin:27px auto;
+}
+.tagline{
+ font-size:14px;
+ letter-spacing:4px;
+ color:#e0d1bd;
+}
+.welcome{
+ margin-top:28px;
+ color:#e8ddcf;
+ font-size:18px;
+}
+main{
+ max-width:720px;
+ margin:auto;
+ padding:0 18px 25px;
+}
+.top{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:12px;
+ margin-bottom:18px;
+}
+h2{
+ color:#f1e5d3;
+ font-size:25px;
+ margin:0;
+}
+button,input{font-family:inherit}
+.lang{
+ background:#d9c5ad;
+ color:#44382e;
+ border:1px solid #a47d59;
+ padding:13px 18px;
+ border-radius:12px;
+ font-size:15px;
+ cursor:pointer;
+}
+.search{
+ width:100%;
+ padding:17px;
+ border-radius:15px;
+ border:1px solid #c0a080;
+ background:#ded2c3;
+ color:#44382e;
+ font-size:16px;
+ outline:none;
+ margin:12px 0 22px;
+}
+.search::placeholder{color:#817467}
+.tabs{
+ display:flex;
+ gap:10px;
+ overflow-x:auto;
+ padding:5px 0 17px;
+ scrollbar-color:#b18a65 transparent;
+}
+.tab{
+ flex-shrink:0;
+ padding:14px 20px;
+ background:#77736b;
+ color:#f0e5d5;
+ border:1px solid #b59b80;
+ border-radius:13px;
+ font-size:15px;
+ cursor:pointer;
+}
+.tab.active{
+ background:#b18a65;
+ color:#fff9ef;
+ border-color:#d2b18d;
+}
+.section-title{
+ font-size:22px;
+ color:#f0e1ce;
+ margin:34px 0 18px;
+}
+.item{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:12px;
+ background:linear-gradient(135deg,#e3d8ca,#cfc0ae);
+ border:1px solid #b59d84;
+ border-radius:21px;
+ padding:22px 19px;
+ margin-bottom:15px;
+ box-shadow:0 5px 12px #39352e30;
+ color:var(--ink);
+}
+.info{min-width:0}
+.name{
+ font-size:19px;
+ font-weight:bold;
+ margin-bottom:10px;
+}
+.desc{
+ color:var(--muted);
+ font-size:14px;
+ line-height:1.8;
+}
+.price{
+ color:#886345;
+ font-size:14px;
+ white-space:nowrap;
+ text-align:left;
+ font-weight:bold;
+}
+.empty{
+ text-align:center;
+ padding:35px 10px;
+ color:#f0e5d5;
+ display:none;
+}
+footer{
+ text-align:center;
+ padding:65px 15px 40px;
+ color:#eee0cf;
+}
+footer .line{margin:0 auto 35px}
+footer p{color:#e2d4c2}
+@media(max-width:380px){
+ .top h2{font-size:21px}
+ .item{padding:19px 14px}
+ .name{font-size:17px}
+ .price{font-size:12px}
+}
+</style>
+</head>
+<body>
 
-Here are some ideas to get you started:
+<header>
+ <div class="logo">CAFE<br>SOLEY</div>
+ <div class="line"></div>
+ <div class="tagline">COFFEE • MOMENTS • LIFE</div>
+ <div class="welcome" id="welcome">به کافه سولی خوش آمدید</div>
+</header>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<main>
+ <div class="top">
+  <button class="lang" onclick="toggleLanguage()" id="lang">English</button>
+  <h2 id="menuTitle">منوی کافه</h2>
+ </div>
+
+ <input class="search" id="search"
+ placeholder="جستجوی نوشیدنی..."
+ oninput="render()">
+
+ <div class="tabs" id="tabs"></div>
+ <div id="menu"></div>
+ <div class="empty" id="empty">موردی پیدا نشد</div>
+</main>
+
+<footer>
+ <div class="line"></div>
+ <div>CAFE SOLEY</div>
+ <p>🤎 ممنون از انتخاب شما</p>
+</footer>
+
+<script>
+const data=[
+{
+ cat:"hot",fa:"نوشیدنی‌های گرم",en:"Hot Drinks",
+ items:[
+  ["اسپرسو سینگل","Single Espresso","عصاره قهوه با عطر و طعم غلیظ","Rich and aromatic single espresso",150],
+  ["اسپرسو دبل","Double Espresso","دو شات اسپرسو با طعمی قوی و ماندگار","Two shots of rich espresso",170],
+  ["آمریکانو","Americano","اسپرسو ترکیب‌شده با آب گرم","Espresso with hot water",200],
+  ["لاته","Latte","ترکیب اسپرسو و شیر بخارداده‌شده","Espresso and steamed milk",280],
+  ["کاپوچینو","Cappuccino","اسپرسو، شیر و فوم مخملی","Espresso, milk and creamy foam",300],
+  ["موکا","Mocha","ترکیب قهوه، شکلات و شیر","Coffee, chocolate and milk",300],
+  ["کارامل ماکیاتو","Caramel Macchiato","ترکیب شیر، اسپرسو و کارامل","Milk, espresso and caramel",300],
+  ["هات چاکلت","Hot Chocolate","نوشیدنی گرم و شکلاتی","Rich hot chocolate",280],
+  ["ماسالا","Masala","ترکیب شیر و ادویه‌های معطر","Milk with aromatic spices",250],
+  ["شیر گرم","Warm Milk","شیر گرم و تازه","Warm fresh milk",150],
+  ["کرک هل","Cardamom Karak","نوشیدنی کرمی با عطر هل","Creamy drink with cardamom",280],
+  ["کرک زعفران","Saffron Karak","نوشیدنی کرمی با عطر زعفران","Creamy drink with saffron",280],
+  ["چای هل و دارچین","Cardamom Cinnamon Tea","چای معطر با هل و دارچین","Tea with cardamom and cinnamon",70],
+  ["لاته طعم‌دار (فندق و کارامل)","Flavored Latte (Hazelnut & Caramel)","لاته با انتخاب طعم فندق یا کارامل","Latte with hazelnut or caramel flavor",300]
+ ]
+},
+{
+ cat:"cold",fa:"نوشیدنی‌های سرد",en:"Cold Drinks",
+ items:[
+  ["آیس آمریکانو","Iced Americano","اسپرسو با آب خنک و یخ","Espresso with cold water and ice",200],
+  ["آیس لاته","Iced Latte","ترکیب اسپرسو و شیر سرد با یخ","Espresso, cold milk and ice",300],
+  ["آیس موکا","Iced Mocha","ترکیب قهوه، شکلات و شیر سرد","Coffee, chocolate and cold milk",300],
+  ["آیس کارامل ماکیاتو","Iced Caramel Macchiato","شیر سرد، اسپرسو و طعم کارامل","Cold milk, espresso and caramel",300],
+  ["آیس چاکلت","Iced Chocolate","نوشیدنی خنک و شکلاتی","Refreshing chocolate drink",280],
+  ["آیس ماسالا","Iced Masala","ترکیب شیر سرد و ادویه‌های معطر ماسالا","Cold milk with aromatic masala spices",250],
+  ["آیس فندق","Iced Hazelnut","نوشیدنی خنک با عطر و طعم فندق","Refreshing hazelnut-flavored drink",300]
+ ]
+},
+{
+ cat:"shake",fa:"شیک",en:"Milkshakes",
+ items:[
+  ["شیک نوتلا","Nutella Shake","ترکیب بستنی، شیر و نوتلا","Ice cream, milk and Nutella",350],
+  ["شیک موز","Banana Shake","ترکیب موز تازه، شیر و بستنی","Fresh banana, milk and ice cream",350],
+  ["شیک موز شکلات","Banana Chocolate Shake","ترکیب موز، شکلات، شیر و بستنی","Banana, chocolate, milk and ice cream",350],
+  ["شیک وانیل","Vanilla Shake","ترکیب شیر و بستنی با عطر وانیل","Milk and ice cream with vanilla",350],
+  ["شیک شکلات","Chocolate Shake","ترکیب شیر، بستنی و شکلات","Milk, ice cream and chocolate",350],
+  ["شیک موز نوتلا","Banana Nutella Shake","ترکیب موز تازه، نوتلا، شیر و بستنی","Fresh banana, Nutella, milk and ice cream",350]
+ ]
+},
+{
+ cat:"tea",fa:"دمنوش",en:"Herbal Tea",
+ items:[
+  ["دمنوش دل‌آرام","Delaram Herbal Tea","ترکیب گل گاوزبان و پر لیمو","Borage and lemon leaf",250],
+  ["دمنوش ماهرخ","Mahrokh Herbal Tea","ترکیب سنبل‌الطیب و چای کوهی","Valerian and mountain tea",250],
+  ["دمنوش دل‌آرام سیب و دارچین","Delaram Apple & Cinnamon","ترکیب سیب و دارچین","Apple and cinnamon",250],
+  ["دمنوش بمب اتم","Atom Bomb Herbal Tea","ترکیب جنسینگ، هل، دارچین، نارنگی و سیب","Ginseng, cardamom, cinnamon, tangerine and apple",300]
+ ]
+},
+{
+ cat:"cake",fa:"کیک",en:"Cakes",
+ items:[
+  ["کیک شکلاتی","Chocolate Cake","کیکی نرم و خوش‌طعم با عطر شکلات","Soft cake with rich chocolate flavor",200],
+  ["کیک دبل شکلات","Double Chocolate Cake","کیک شکلاتی با طعم غلیظ‌تر و شکلات بیشتر","Rich cake with extra chocolate",250],
+  ["کیک هویج و گردو","Carrot Walnut Cake","ترکیب هویج تازه و گردو با بافتی لطیف","Carrot and walnut in a soft cake",200],
+  ["کیک تیرامیسو","Tiramisu Cake","کیکی با طعم قهوه و خامه لطیف","Coffee-flavored cake with creamy layers",250]
+ ]
+}
+];
+
+let english=false;
+let active="all";
+
+function toggleLanguage(){
+ english=!english;
+ document.documentElement.lang=english?"en":"fa";
+ document.documentElement.dir=english?"ltr":"rtl";
+ document.getElementById("lang").textContent=english?"فارسی":"English";
+ document.getElementById("welcome").textContent=english?
+ "Welcome to Cafe Soley":"به کافه سولی خوش آمدید";
+ document.getElementById("menuTitle").textContent=english?
+ "Cafe Menu":"منوی کافه";
+ document.getElementById("search").placeholder=english?
+ "Search menu...":"جستجوی منو...";
+ document.querySelector("footer p").textContent=english?
+ "🤎 Thank you for choosing us":"🤎 ممنون از انتخاب شما";
+ render();
+}
+
+function renderTabs(){
+ const labels=english?
+ ["All","Hot Drinks","Cold Drinks","Milkshakes","Herbal Tea","Cakes"]:
+ ["همه","نوشیدنی گرم","نوشیدنی سرد","شیک","دمنوش","کیک"];
+ const keys=["all","hot","cold","shake","tea","cake"];
+ document.getElementById("tabs").innerHTML=keys.map((key,i)=>
+ `<button class="tab ${active===key?"active":""}"
+ onclick="setCategory('${key}')">${labels[i]}</button>`
+ ).join("");
+}
+
+function setCategory(key){
+ active=key;
+ render();
+}
+
+function render(){
+ renderTabs();
+ const query=document.getElementById("search").value.trim().toLowerCase();
+ let html="";
+ let count=0;
+
+ data.forEach(section=>{
+  if(active!=="all" && active!==section.cat)return;
+  let items=section.items.filter(item=>
+   (item[0]+" "+item[1]+" "+item[2]+" "+item[3])
+   .toLowerCase().includes(query)
+  );
+  if(!items.length)return;
+
+  html+=`<h3 class="section-title">${english?section.en:section.fa}</h3>`;
+
+  items.forEach(item=>{
+   count++;
+   const price=english?
+    item[4].toLocaleString("en-US")+" Toman":
+    item[4].toLocaleString("fa-IR")+" هزار تومان";
+
+   html+=`
+   <div class="item">
+    <div class="info">
+     <div class="name">${item[english?1:0]}</div>
+     <div class="desc">${item[english?3:2]}</div>
+    </div>
+    <div class="price">${price}</div>
+   </div>`;
+  });
+ });
+
+ document.getElementById("menu").innerHTML=html;
+ document.getElementById("empty").style.display=count?"none":"block";
+}
+render();
+</script>
+</body>
+</html>
