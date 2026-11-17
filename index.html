@@ -213,30 +213,38 @@ const data=[
  items:[
   ["اسپرسو سینگل","Single Espresso","عصاره قهوه با عطر و طعم غلیظ","Rich and aromatic single espresso",150],
   ["اسپرسو دبل","Double Espresso","دو شات اسپرسو با طعمی قوی و ماندگار","Two shots of rich espresso",170],
-  ["آمریکانو","Americano","اسپرسو ترکیب‌شده با آب گرم","Espresso with hot water",200],
+  ["آمریکانو","Americano","اسپرسو ترکیب‌شده با آب گرم","Espresso with hot water",180],
   ["لاته","Latte","ترکیب اسپرسو و شیر بخارداده‌شده","Espresso and steamed milk",280],
-  ["کاپوچینو","Cappuccino","اسپرسو، شیر و فوم مخملی","Espresso, milk and creamy foam",300],
-  ["موکا","Mocha","ترکیب قهوه، شکلات و شیر","Coffee, chocolate and milk",300],
-  ["کارامل ماکیاتو","Caramel Macchiato","ترکیب شیر، اسپرسو و کارامل","Milk, espresso and caramel",300],
+  ["کاپوچینو","Cappuccino","اسپرسو، شیر و فوم مخملی","Espresso, milk and creamy foam",280],
+  ["موکا","Mocha","ترکیب قهوه، شکلات و شیر","Coffee, chocolate and milk",320],
+  ["کارامل ماکیاتو","Caramel Macchiato","ترکیب شیر، اسپرسو و کارامل","Milk, espresso and caramel",320],
   ["هات چاکلت","Hot Chocolate","نوشیدنی گرم و شکلاتی","Rich hot chocolate",280],
   ["ماسالا","Masala","ترکیب شیر و ادویه‌های معطر","Milk with aromatic spices",250],
   ["شیر گرم","Warm Milk","شیر گرم و تازه","Warm fresh milk",150],
   ["کرک هل","Cardamom Karak","نوشیدنی کرمی با عطر هل","Creamy drink with cardamom",280],
   ["کرک زعفران","Saffron Karak","نوشیدنی کرمی با عطر زعفران","Creamy drink with saffron",280],
   ["چای هل و دارچین","Cardamom Cinnamon Tea","چای معطر با هل و دارچین","Tea with cardamom and cinnamon",70],
-  ["لاته طعم‌دار (فندق و کارامل)","Flavored Latte (Hazelnut & Caramel)","لاته با انتخاب طعم فندق یا کارامل","Latte with hazelnut or caramel flavor",300]
+  ["لاته طعم‌دار","Flavored Latte","لاته با انتخاب طعم فندق یا کارامل","Latte with hazelnut or caramel flavor",320]
+ ]
+},
+{
+ cat:"coldcoffee",fa:"نوشیدنی‌های سرد کافئین‌دار",en:"Cold Caffeinated Drinks",
+ items:[
+  ["آیس آمریکانو","Iced Americano","اسپرسو با آب خنک و یخ","Espresso with cold water and ice",180],
+  ["آیس لاته طعم‌دار","Iced Flavored Latte","لاته سرد با انتخاب طعم فندق یا کارامل","Iced latte with hazelnut or caramel flavor",320],
+  ["آیس موکا","Iced Mocha","ترکیب قهوه، شکلات و شیر سرد","Coffee, chocolate and cold milk",320],
+  ["آیس کارامل ماکیاتو","Iced Caramel Macchiato","شیر سرد، اسپرسو و طعم کارامل","Cold milk, espresso and caramel",320],
+  ["آیس چاکلت","Iced Chocolate","نوشیدنی خنک و شکلاتی","Refreshing chocolate drink",280],
+  ["آیس ماسالا","Iced Masala","ترکیب شیر سرد و ادویه‌های معطر ماسالا","Cold milk with aromatic masala spices",250],
+  ["آیس فندق","Iced Hazelnut","نوشیدنی خنک با عطر و طعم فندق","Refreshing hazelnut-flavored drink",300],
+  ["افوگاتو","Affogato","بستنی با یک شات اسپرسو","Ice cream with a shot of espresso",280]
  ]
 },
 {
  cat:"cold",fa:"نوشیدنی‌های سرد",en:"Cold Drinks",
  items:[
-  ["آیس آمریکانو","Iced Americano","اسپرسو با آب خنک و یخ","Espresso with cold water and ice",200],
-  ["آیس لاته","Iced Latte","ترکیب اسپرسو و شیر سرد با یخ","Espresso, cold milk and ice",300],
-  ["آیس موکا","Iced Mocha","ترکیب قهوه، شکلات و شیر سرد","Coffee, chocolate and cold milk",300],
-  ["آیس کارامل ماکیاتو","Iced Caramel Macchiato","شیر سرد، اسپرسو و طعم کارامل","Cold milk, espresso and caramel",300],
-  ["آیس چاکلت","Iced Chocolate","نوشیدنی خنک و شکلاتی","Refreshing chocolate drink",280],
-  ["آیس ماسالا","Iced Masala","ترکیب شیر سرد و ادویه‌های معطر ماسالا","Cold milk with aromatic masala spices",250],
-  ["آیس فندق","Iced Hazelnut","نوشیدنی خنک با عطر و طعم فندق","Refreshing hazelnut-flavored drink",300]
+  ["موهیتو","Mojito","نوشیدنی خنک لیمو و نعنا","Refreshing lime and mint drink",270],
+  ["بلو هاوایی","Blue Hawaii","نوشیدنی خنک با طعم استوایی","Refreshing tropical drink",270]
  ]
 },
 {
@@ -253,10 +261,9 @@ const data=[
 {
  cat:"tea",fa:"دمنوش",en:"Herbal Tea",
  items:[
-  ["دمنوش دل‌آرام","Delaram Herbal Tea","ترکیب گل گاوزبان و پر لیمو","Borage and lemon leaf",250],
+  ["دمنوش دل‌آرام","Delaram Herbal Tea","سیب و دارچین","Apple and cinnamon",250],
   ["دمنوش ماهرخ","Mahrokh Herbal Tea","ترکیب سنبل‌الطیب و چای کوهی","Valerian and mountain tea",250],
-  ["دمنوش دل‌آرام سیب و دارچین","Delaram Apple & Cinnamon","ترکیب سیب و دارچین","Apple and cinnamon",250],
-  ["دمنوش بمب اتم","Atom Bomb Herbal Tea","ترکیب جنسینگ، هل، دارچین، نارنگی و سیب","Ginseng, cardamom, cinnamon, tangerine and apple",300]
+  ["دمنوش ترنج","Toranj Herbal Tea","ترکیب جنسینگ، هل، دارچین، نارنگی و سیب","Ginseng, cardamom, cinnamon, tangerine and apple",300]
  ]
 },
 {
@@ -291,9 +298,9 @@ function toggleLanguage(){
 
 function renderTabs(){
  const labels=english?
- ["All","Hot Drinks","Cold Drinks","Milkshakes","Herbal Tea","Cakes"]:
- ["همه","نوشیدنی گرم","نوشیدنی سرد","شیک","دمنوش","کیک"];
- const keys=["all","hot","cold","shake","tea","cake"];
+ ["All","Hot Drinks","Cold Caffeinated Drinks","Cold Drinks","Milkshakes","Herbal Tea","Cakes"]:
+ ["همه","نوشیدنی گرم","نوشیدنی سرد کافئین‌دار","نوشیدنی سرد","شیک","دمنوش","کیک"];
+ const keys=["all","hot","coldcoffee","cold","shake","tea","cake"];
  document.getElementById("tabs").innerHTML=keys.map((key,i)=>
  `<button class="tab ${active===key?"active":""}"
  onclick="setCategory('${key}')">${labels[i]}</button>`
