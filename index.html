@@ -8,12 +8,8 @@
 <title>Cafe Soley | Menu</title>
 <style>
 :root{
- --concrete:#85837c;
- --concrete-dark:#66635d;
  --coffee:#b18a65;
- --coffee-dark:#806044;
  --cream:#eee4d4;
- --card:#d8cbbb;
  --ink:#40372f;
  --muted:#766b60;
 }
@@ -70,11 +66,7 @@ main{
  gap:12px;
  margin-bottom:18px;
 }
-h2{
- color:#f1e5d3;
- font-size:25px;
- margin:0;
-}
+h2{color:#f1e5d3;font-size:25px;margin:0}
 button,input{font-family:inherit}
 .lang{
  background:#d9c5ad;
@@ -138,16 +130,8 @@ button,input{font-family:inherit}
  color:var(--ink);
 }
 .info{min-width:0}
-.name{
- font-size:19px;
- font-weight:bold;
- margin-bottom:10px;
-}
-.desc{
- color:var(--muted);
- font-size:14px;
- line-height:1.8;
-}
+.name{font-size:19px;font-weight:bold;margin-bottom:10px}
+.desc{color:var(--muted);font-size:14px;line-height:1.8}
 .price{
  color:#886345;
  font-size:14px;
@@ -211,68 +195,80 @@ const data=[
 {
  cat:"hot",fa:"نوشیدنی‌های گرم",en:"Hot Drinks",
  items:[
-  ["اسپرسو سینگل","Single Espresso","عصاره قهوه با عطر و طعم غلیظ","Rich and aromatic single espresso",150],
-  ["اسپرسو دبل","Double Espresso","دو شات اسپرسو با طعمی قوی و ماندگار","Two shots of rich espresso",170],
-  ["آمریکانو","Americano","اسپرسو ترکیب‌شده با آب گرم","Espresso with hot water",180],
-  ["لاته","Latte","ترکیب اسپرسو و شیر بخارداده‌شده","Espresso and steamed milk",280],
-  ["کاپوچینو","Cappuccino","اسپرسو، شیر و فوم مخملی","Espresso, milk and creamy foam",280],
-  ["موکا","Mocha","ترکیب قهوه، شکلات و شیر","Coffee, chocolate and milk",320],
-  ["کارامل ماکیاتو","Caramel Macchiato","ترکیب شیر، اسپرسو و کارامل","Milk, espresso and caramel",320],
-  ["هات چاکلت","Hot Chocolate","نوشیدنی گرم و شکلاتی","Rich hot chocolate",280],
+  ["اسپرسو سینگل","Single Espresso","عصاره قهوه با عطر و طعم غلیظ","Rich and aromatic single espresso",140],
+  ["اسپرسو دبل","Double Espresso","دو شات اسپرسو با طعمی قوی","Two shots of rich espresso",150],
+  ["آمریکانو","Americano","اسپرسو ترکیب‌شده با آب گرم","Espresso with hot water",170],
+  ["لاته","Latte","ترکیب اسپرسو و شیر بخارداده‌شده","Espresso and steamed milk",250],
+  ["کاپوچینو","Cappuccino","اسپرسو، شیر و فوم مخملی","Espresso, milk and creamy foam",250],
+  ["لاته طعم‌دار","Flavored Latte","موکا، فندق، وانیل، کارامل","Mocha, hazelnut, vanilla, caramel",290],
+  ["ماکیاتو","Macchiato","کارامل، فندق، وانیل","Caramel, hazelnut, vanilla",290],
   ["ماسالا","Masala","ترکیب شیر و ادویه‌های معطر","Milk with aromatic spices",250],
-  ["شیر گرم","Warm Milk","شیر گرم و تازه","Warm fresh milk",150],
-  ["کرک هل","Cardamom Karak","نوشیدنی کرمی با عطر هل","Creamy drink with cardamom",280],
-  ["کرک زعفران","Saffron Karak","نوشیدنی کرمی با عطر زعفران","Creamy drink with saffron",280],
-  ["چای هل و دارچین","Cardamom Cinnamon Tea","چای معطر با هل و دارچین","Tea with cardamom and cinnamon",70],
-  ["لاته طعم‌دار","Flavored Latte","لاته با انتخاب طعم فندق یا کارامل","Latte with hazelnut or caramel flavor",320]
+  ["کرک هل","Cardamom Karak","نوشیدنی کرمی با عطر هل","Creamy drink with cardamom",250],
+  ["کرک زعفران","Saffron Karak","نوشیدنی کرمی با عطر زعفران","Creamy drink with saffron",250],
+  ["هات چاکلت","Hot Chocolate","نوشیدنی گرم و شکلاتی","Rich hot chocolate",250],
+  ["چاکلت ماسالا","Chocolate Masala","ترکیب شکلات و ادویه ماسالا","Chocolate with masala spices",250],
+  ["چای","Tea","چای تازه‌دم","Freshly brewed tea",70],
+  ["شیر گرم","Warm Milk","شیر گرم و تازه","Warm fresh milk",90],
+  ["شیر عسل","Honey Milk","ترکیب شیر و عسل","Milk and honey",null]
  ]
 },
 {
  cat:"coldcoffee",fa:"نوشیدنی‌های سرد کافئین‌دار",en:"Cold Caffeinated Drinks",
  items:[
-  ["آیس آمریکانو","Iced Americano","اسپرسو با آب خنک و یخ","Espresso with cold water and ice",180],
-  ["آیس لاته طعم‌دار","Iced Flavored Latte","لاته سرد با انتخاب طعم فندق یا کارامل","Iced latte with hazelnut or caramel flavor",320],
-  ["آیس موکا","Iced Mocha","ترکیب قهوه، شکلات و شیر سرد","Coffee, chocolate and cold milk",320],
-  ["آیس کارامل ماکیاتو","Iced Caramel Macchiato","شیر سرد، اسپرسو و طعم کارامل","Cold milk, espresso and caramel",320],
-  ["آیس چاکلت","Iced Chocolate","نوشیدنی خنک و شکلاتی","Refreshing chocolate drink",280],
-  ["آیس ماسالا","Iced Masala","ترکیب شیر سرد و ادویه‌های معطر ماسالا","Cold milk with aromatic masala spices",250],
-  ["آیس فندق","Iced Hazelnut","نوشیدنی خنک با عطر و طعم فندق","Refreshing hazelnut-flavored drink",300],
-  ["افوگاتو","Affogato","بستنی با یک شات اسپرسو","Ice cream with a shot of espresso",280]
+  ["آیس آمریکانو","Iced Americano","اسپرسو با آب خنک و یخ","Espresso with cold water and ice",170],
+  ["آیس لاته","Iced Latte","اسپرسو و شیر سرد","Espresso and cold milk",260],
+  ["آیس چاکلت","Iced Chocolate","نوشیدنی خنک و شکلاتی","Refreshing chocolate drink",260],
+  ["آیس ماسالا","Iced Masala","شیر سرد با ادویه ماسالا","Cold milk with masala spices",260],
+  ["آفوگاتو","Affogato","بستنی با یک شات اسپرسو","Ice cream with a shot of espresso",280],
+  ["آیس ماکیاتو","Iced Macchiato","موکا، فندق، وانیل، کارامل","Mocha, hazelnut, vanilla, caramel",290]
  ]
 },
 {
  cat:"cold",fa:"نوشیدنی‌های سرد",en:"Cold Drinks",
  items:[
   ["موهیتو","Mojito","نوشیدنی خنک لیمو و نعنا","Refreshing lime and mint drink",270],
-  ["بلو هاوایی","Blue Hawaii","نوشیدنی خنک با طعم استوایی","Refreshing tropical drink",270]
+  ["بلو هاوایی","Blue Hawaii","نوشیدنی خنک با طعم استوایی","Refreshing tropical drink",350],
+  ["اکوا","Aqua","نوشیدنی با سیروپ بلو کوراسائو و هایپ","Blue curacao syrup and energy drink",390],
+  ["اوشن","Ocean","نوشیدنی خنک و خاص","Refreshing special drink",350]
  ]
 },
 {
- cat:"shake",fa:"شیک",en:"Milkshakes",
+ cat:"shake",fa:"شیک‌ها",en:"Milkshakes",
  items:[
-  ["شیک نوتلا","Nutella Shake","ترکیب بستنی، شیر و نوتلا","Ice cream, milk and Nutella",350],
-  ["شیک موز","Banana Shake","ترکیب موز تازه، شیر و بستنی","Fresh banana, milk and ice cream",350],
-  ["شیک موز شکلات","Banana Chocolate Shake","ترکیب موز، شکلات، شیر و بستنی","Banana, chocolate, milk and ice cream",350],
-  ["شیک وانیل","Vanilla Shake","ترکیب شیر و بستنی با عطر وانیل","Milk and ice cream with vanilla",350],
-  ["شیک شکلات","Chocolate Shake","ترکیب شیر، بستنی و شکلات","Milk, ice cream and chocolate",350],
-  ["شیک موز نوتلا","Banana Nutella Shake","ترکیب موز تازه، نوتلا، شیر و بستنی","Fresh banana, Nutella, milk and ice cream",350]
+  ["شیک نوتلا","Nutella Shake","ترکیب بستنی، شیر و نوتلا","Ice cream, milk and Nutella",250],
+  ["شیک موز","Banana Shake","موز تازه، شیر و بستنی","Fresh banana, milk and ice cream",250],
+  ["شیک شکلات","Chocolate Shake","شیر، بستنی و شکلات","Milk, ice cream and chocolate",250],
+  ["شیک وانیل","Vanilla Shake","شیر و بستنی با عطر وانیل","Milk and ice cream with vanilla",250],
+  ["شیک موز نوتلا","Banana Nutella Shake","موز، نوتلا، شیر و بستنی","Banana, Nutella, milk and ice cream",450]
  ]
 },
 {
  cat:"tea",fa:"دمنوش",en:"Herbal Tea",
  items:[
-  ["دمنوش دل‌آرام","Delaram Herbal Tea","سیب و دارچین","Apple and cinnamon",250],
-  ["دمنوش ماهرخ","Mahrokh Herbal Tea","ترکیب سنبل‌الطیب و چای کوهی","Valerian and mountain tea",250],
-  ["دمنوش ترنج","Toranj Herbal Tea","ترکیب جنسینگ، هل، دارچین، نارنگی و سیب","Ginseng, cardamom, cinnamon, tangerine and apple",300]
+  ["دمنوش آرام","Aram Herbal Tea","دمنوش ترکیبی","Herbal blend",250],
+  ["دمنوش ماهرخ","Mahrokh Herbal Tea","دمنوش ترکیبی","Herbal blend",250],
+  ["دمنوش ترنج","Toranj Herbal Tea","دمنوش ترکیبی","Herbal blend",200]
  ]
 },
 {
- cat:"cake",fa:"کیک",en:"Cakes",
+ cat:"cake",fa:"کیک و دسر",en:"Cakes & Desserts",
  items:[
-  ["کیک شکلاتی","Chocolate Cake","کیکی نرم و خوش‌طعم با عطر شکلات","Soft cake with rich chocolate flavor",200],
-  ["کیک دبل شکلات","Double Chocolate Cake","کیک شکلاتی با طعم غلیظ‌تر و شکلات بیشتر","Rich cake with extra chocolate",250],
-  ["کیک هویج و گردو","Carrot Walnut Cake","ترکیب هویج تازه و گردو با بافتی لطیف","Carrot and walnut in a soft cake",200],
-  ["کیک تیرامیسو","Tiramisu Cake","کیکی با طعم قهوه و خامه لطیف","Coffee-flavored cake with creamy layers",250]
+  ["کیک شکلاتی","Chocolate Cake","کیک شکلاتی","Chocolate cake",250],
+  ["کیک دبل","Double Cake","کیک دبل","Double cake",250],
+  ["کیک تیرامیسو","Tiramisu Cake","کیک با طعم قهوه","Coffee-flavored cake",250],
+  ["کیک نسکافه","Nescafe Cake","کیک با طعم نسکافه","Nescafe-flavored cake",250],
+  ["نوتلا قایقی","Nutella Boat","دسر نوتلا","Nutella dessert",200]
+ ]
+},
+{
+ cat:"special",fa:"ویژه",en:"Special Drinks",
+ items:[
+  ["لاو","Love","نوشیدنی طعم‌دار","Flavored drink",350],
+  ["موسکو","Moscow","نوشیدنی طعم‌دار","Flavored drink",350],
+  ["شیخ مانی","Sheikh Mani","نوشیدنی طعم‌دار","Flavored drink",350],
+  ["آدامس دارچین","Cinnamon Gum","نوشیدنی طعم‌دار","Flavored drink",350],
+  ["پرتقال نعنا","Orange Mint","نوشیدنی طعم‌دار","Flavored drink",350],
+  ["دوسیب آلبالو","Two Apples Sour Cherry","نوشیدنی طعم‌دار","Flavored drink",350]
  ]
 }
 ];
@@ -290,7 +286,7 @@ function toggleLanguage(){
  document.getElementById("menuTitle").textContent=english?
  "Cafe Menu":"منوی کافه";
  document.getElementById("search").placeholder=english?
- "Search menu...":"جستجوی منو...";
+ "Search menu...":"جستجوی نوشیدنی...";
  document.querySelector("footer p").textContent=english?
  "🤎 Thank you for choosing us":"🤎 ممنون از انتخاب شما";
  render();
@@ -298,9 +294,10 @@ function toggleLanguage(){
 
 function renderTabs(){
  const labels=english?
- ["All","Hot Drinks","Cold Caffeinated Drinks","Cold Drinks","Milkshakes","Herbal Tea","Cakes"]:
- ["همه","نوشیدنی گرم","نوشیدنی سرد کافئین‌دار","نوشیدنی سرد","شیک","دمنوش","کیک"];
- const keys=["all","hot","coldcoffee","cold","shake","tea","cake"];
+ ["All","Hot Drinks","Cold Caffeinated Drinks","Cold Drinks","Milkshakes","Herbal Tea","Cakes & Desserts","Special"]:
+ ["همه","نوشیدنی‌های گرم","سرد کافئین‌دار","نوشیدنی‌های سرد","شیک‌ها","دمنوش","کیک و دسر","قلیان"];
+ const keys=["all","hot","coldcoffee","cold","shake","tea","cake","special"];
+
  document.getElementById("tabs").innerHTML=keys.map((key,i)=>
  `<button class="tab ${active===key?"active":""}"
  onclick="setCategory('${key}')">${labels[i]}</button>`
@@ -320,19 +317,23 @@ function render(){
 
  data.forEach(section=>{
   if(active!=="all" && active!==section.cat)return;
+
   let items=section.items.filter(item=>
    (item[0]+" "+item[1]+" "+item[2]+" "+item[3])
    .toLowerCase().includes(query)
   );
+
   if(!items.length)return;
 
   html+=`<h3 class="section-title">${english?section.en:section.fa}</h3>`;
 
   items.forEach(item=>{
    count++;
-   const price=english?
+   const price=item[4]===null?"":(
+    english?
     item[4].toLocaleString("en-US")+" Toman":
-    item[4].toLocaleString("fa-IR")+" هزار تومان";
+    item[4].toLocaleString("fa-IR")+" هزار تومان"
+   );
 
    html+=`
    <div class="item">
@@ -348,6 +349,7 @@ function render(){
  document.getElementById("menu").innerHTML=html;
  document.getElementById("empty").style.display=count?"none":"block";
 }
+
 render();
 </script>
 </body>
