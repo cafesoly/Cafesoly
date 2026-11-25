@@ -198,6 +198,7 @@ const data=[
   ["اسپرسو سینگل","Single Espresso","عصاره قهوه با عطر و طعم غلیظ","Rich and aromatic single espresso",140],
   ["اسپرسو دبل","Double Espresso","دو شات اسپرسو با طعمی قوی","Two shots of rich espresso",150],
   ["آمریکانو","Americano","اسپرسو ترکیب‌شده با آب گرم","Espresso with hot water",170],
+  ["کورتادو","Cortado","ترکیب اسپرسو و مقدار کمی شیر گرم","Espresso balanced with a little warm milk",220],
   ["لاته","Latte","ترکیب اسپرسو و شیر بخارداده‌شده","Espresso and steamed milk",250],
   ["کاپوچینو","Cappuccino","اسپرسو، شیر و فوم مخملی","Espresso, milk and creamy foam",250],
   ["لاته طعم‌دار","Flavored Latte","موکا، فندق، وانیل، کارامل","Mocha, hazelnut, vanilla, caramel",290],
@@ -227,7 +228,7 @@ const data=[
  cat:"cold",fa:"نوشیدنی‌های سرد",en:"Cold Drinks",
  items:[
   ["موهیتو","Mojito","نوشیدنی خنک لیمو و نعنا","Refreshing lime and mint drink",270],
-  ["بلو هاوایی","Blue Hawaii","نوشیدنی خنک با طعم استوایی","Refreshing tropical drink",350],
+  ["بلو هاوایی","Blue Hawaii","نوشیدنی خنک با طعم استوایی","Refreshing tropical drink",270],
   ["اکوا","Aqua","نوشیدنی با سیروپ بلو کوراسائو و هایپ","Blue curacao syrup and energy drink",390],
   ["اوشن","Ocean","نوشیدنی خنک و خاص","Refreshing special drink",350]
  ]
@@ -235,11 +236,12 @@ const data=[
 {
  cat:"shake",fa:"شیک‌ها",en:"Milkshakes",
  items:[
-  ["شیک نوتلا","Nutella Shake","ترکیب بستنی، شیر و نوتلا","Ice cream, milk and Nutella",250],
-  ["شیک موز","Banana Shake","موز تازه، شیر و بستنی","Fresh banana, milk and ice cream",250],
-  ["شیک شکلات","Chocolate Shake","شیر، بستنی و شکلات","Milk, ice cream and chocolate",250],
-  ["شیک وانیل","Vanilla Shake","شیر و بستنی با عطر وانیل","Milk and ice cream with vanilla",250],
-  ["شیک موز نوتلا","Banana Nutella Shake","موز، نوتلا، شیر و بستنی","Banana, Nutella, milk and ice cream",450]
+  ["شیک نوتلا","Nutella Shake","ترکیب بستنی، شیر و نوتلا","Ice cream, milk and Nutella",350],
+  ["شیک موز","Banana Shake","موز تازه، شیر و بستنی","Fresh banana, milk and ice cream",350],
+  ["شیک شکلات","Chocolate Shake","شیر، بستنی و شکلات","Milk, ice cream and chocolate",350],
+  ["شیک وانیل","Vanilla Shake","شیر و بستنی با عطر وانیل","Milk and ice cream with vanilla",350],
+  ["شیک موز نوتلا","Banana Nutella Shake","موز، نوتلا، شیر و بستنی","Banana, Nutella, milk and ice cream",450],
+  ["شیک موکا","Mocha Shake","شیک موکا؛ نوشیدنی کافئین‌دار","Mocha milkshake; a caffeinated drink",450]
  ]
 },
 {
@@ -261,7 +263,7 @@ const data=[
  ]
 },
 {
- cat:"special",fa:"قلیان",en:"Special Drinks",
+ cat:"special",fa:"ویژه",en:"Special Drinks",
  items:[
   ["لاو","Love","نوشیدنی طعم‌دار","Flavored drink",350],
   ["موسکو","Moscow","نوشیدنی طعم‌دار","Flavored drink",350],
@@ -269,6 +271,13 @@ const data=[
   ["آدامس دارچین","Cinnamon Gum","نوشیدنی طعم‌دار","Flavored drink",350],
   ["پرتقال نعنا","Orange Mint","نوشیدنی طعم‌دار","Flavored drink",350],
   ["دوسیب آلبالو","Two Apples Sour Cherry","نوشیدنی طعم‌دار","Flavored drink",350]
+ ]
+},
+{
+ cat:"finger",fa:"فینگر فود",en:"Finger Food",
+ items:[
+  ["سیب ساده","French Fries","سیب‌زمینی سرخ‌شده","Classic French fries",300],
+  ["سیب پنیر","Cheese Fries","سیب‌زمینی سرخ‌شده با پنیر","French fries with cheese",400]
  ]
 }
 ];
@@ -294,9 +303,9 @@ function toggleLanguage(){
 
 function renderTabs(){
  const labels=english?
- ["All","Hot Drinks","Cold Caffeinated Drinks","Cold Drinks","Milkshakes","Herbal Tea","Cakes & Desserts","Special"]:
- ["همه","نوشیدنی‌های گرم","سرد کافئین‌دار","نوشیدنی‌های سرد","شیک‌ها","دمنوش","کیک و دسر","قلیان"];
- const keys=["all","hot","coldcoffee","cold","shake","tea","cake","special"];
+ ["All","Hot Drinks","Cold Caffeinated Drinks","Cold Drinks","Milkshakes","Herbal Tea","Cakes & Desserts","Special","Finger Food"]:
+ ["همه","نوشیدنی‌های گرم","سرد کافئین‌دار","نوشیدنی‌های سرد","شیک‌ها","دمنوش","کیک و دسر","ویژه","فینگر فود"];
+ const keys=["all","hot","coldcoffee","cold","shake","tea","cake","special","finger"];
 
  document.getElementById("tabs").innerHTML=keys.map((key,i)=>
  `<button class="tab ${active===key?"active":""}"
