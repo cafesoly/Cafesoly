@@ -263,14 +263,14 @@ const data=[
  ]
 },
 {
- cat:"special",fa:"ویژه",en:"Special Drinks",
+ cat:"special",fa:"قلیان",en:"Special Drinks",
  items:[
-  ["لاو","Love","نوشیدنی طعم‌دار","Flavored drink",350],
-  ["موسکو","Moscow","نوشیدنی طعم‌دار","Flavored drink",350],
-  ["شیخ مانی","Sheikh Mani","نوشیدنی طعم‌دار","Flavored drink",350],
-  ["آدامس دارچین","Cinnamon Gum","نوشیدنی طعم‌دار","Flavored drink",350],
-  ["پرتقال نعنا","Orange Mint","نوشیدنی طعم‌دار","Flavored drink",350],
-  ["دوسیب آلبالو","Two Apples Sour Cherry","نوشیدنی طعم‌دار","Flavored drink",350]
+  ["لاو","Love","","",350],
+  ["موسکو","Moscow","","",350],
+  ["شیخ مانی","Sheikh Mani","","",350],
+  ["آدامس دارچین","Cinnamon Gum","","",350],
+  ["پرتقال نعنا","Orange Mint","","",350],
+  ["دوسیب آلبالو","Two Apples Sour Cherry","","",350]
  ]
 },
 {
@@ -304,7 +304,7 @@ function toggleLanguage(){
 function renderTabs(){
  const labels=english?
  ["All","Hot Drinks","Cold Caffeinated Drinks","Cold Drinks","Milkshakes","Herbal Tea","Cakes & Desserts","Special","Finger Food"]:
- ["همه","نوشیدنی‌های گرم","سرد کافئین‌دار","نوشیدنی‌های سرد","شیک‌ها","دمنوش","کیک و دسر","ویژه","فینگر فود"];
+ ["همه","نوشیدنی‌های گرم","سرد کافئین‌دار","نوشیدنی‌های سرد","شیک‌ها","دمنوش","کیک و دسر","قلیان","فینگر فود"];
  const keys=["all","hot","coldcoffee","cold","shake","tea","cake","special","finger"];
 
  document.getElementById("tabs").innerHTML=keys.map((key,i)=>
@@ -344,11 +344,13 @@ function render(){
     item[4].toLocaleString("fa-IR")+" هزار تومان"
    );
 
+   const description=item[english?3:2];
+
    html+=`
    <div class="item">
     <div class="info">
      <div class="name">${item[english?1:0]}</div>
-     <div class="desc">${item[english?3:2]}</div>
+     ${description?`<div class="desc">${description}</div>`:""}
     </div>
     <div class="price">${price}</div>
    </div>`;
